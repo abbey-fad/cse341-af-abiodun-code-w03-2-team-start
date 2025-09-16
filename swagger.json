@@ -1,37 +1,48 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "My API",
-    "description": "Temple API",
+    "title": "Users API",
+    "description": "Users API",
     "version": "1.0.0"
   },
-  "host": "cse341-instructor.herokuapp.com",
+  "host": "project1-0u82.onrender.com",
   "basePath": "/",
   "schemes": [
     "https"
   ],
   "paths": {
-    "/api-docs": {
+    "/": {
       "get": {
-        "description": "",
-        "parameters": [],
-        "responses": {}
-      }
-    },
-    "/contacts/": {
-      "get": {
-        "description": "",
-        "produces": [
-          "application/json"
+        "tags": [
+          "Hello World"
         ],
-        "parameters": [],
+        "description": "",
         "responses": {
           "200": {
             "description": "OK"
           }
         }
+      }
+    },
+    "/users/": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
       },
       "post": {
+        "tags": [
+          "Users"
+        ],
         "description": "",
         "parameters": [
           {
@@ -60,8 +71,8 @@
           }
         ],
         "responses": {
-          "201": {
-            "description": "Created"
+          "204": {
+            "description": "No Content"
           },
           "500": {
             "description": "Internal Server Error"
@@ -69,12 +80,12 @@
         }
       }
     },
-    "/contacts/{id}": {
+    "/users/{id}": {
       "get": {
-        "description": "",
-        "produces": [
-          "application/json"
+        "tags": [
+          "Users"
         ],
+        "description": "",
         "parameters": [
           {
             "name": "id",
@@ -86,10 +97,19 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
       "put": {
+        "tags": [
+          "Users"
+        ],
         "description": "",
         "parameters": [
           {
@@ -133,6 +153,9 @@
         }
       },
       "delete": {
+        "tags": [
+          "Users"
+        ],
         "description": "",
         "parameters": [
           {
